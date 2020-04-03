@@ -65,11 +65,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'church_name' => $data['church_name'],
             'password' => Hash::make($data['password']),
         ]);
+        $user->info()->create([
+            'church_name' => $data['church_name']
+        ]);
+        $user->hero()->create();
+        $user->mission()->create();
+        $user->pastor()->create();
+        $user->testimonials()->create([
+            'image' => 'https://randomuser.me/api/portraits/women/53.jpg',
+            'message' => "I feel like I am with family that I have known for years who love me no matter what. It is a wonderful, Bible based Church. We do not look to step on anyone's toes, but we do not stand by and do nothing when someone is headed down the wrong path.",
+            'reference' => 'Susan Doe'
+        ]);
+        $user->testimonials()->create([
+            'image' => 'https://randomuser.me/api/portraits/men/86.jpg',
+            'message' => "I would tell people that I have felt more love by this church family and the preacher than anywhere I have ever attended.",
+            'reference' => 'Frank User'
+        ]);
+        $user->visit()->create();
+        return $user;
     }
 }

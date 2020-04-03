@@ -23,15 +23,15 @@
   </div>
   <div class="px-4 py-5 sm:p-0">
     <dl>
-      <a class="sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 sm:py-5" href="#">
+      <a class="sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 sm:py-5" href="/info">
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          1. Church Information
+          @if($user->info->done()) ✅ @else 1. @endif Church Information
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
           Name, Address, Giving Links, Etc.
         </dd>
       </a>
-      <a class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5" href="#">
+      <a class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5" href="/hero">
         <dt class="text-sm leading-5 font-medium text-gray-500">
           2. Hero
         </dt>

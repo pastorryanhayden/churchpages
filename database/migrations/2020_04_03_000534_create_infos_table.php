@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChurchInformationTable extends Migration
+class CreateInfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateChurchInformationTable extends Migration
      */
     public function up()
     {
-        Schema::create('church_information', function (Blueprint $table) {
+        Schema::create('infos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->index();
             $table->string('church_name')->nullable();
             $table->string('church_url')->nullable();
             $table->boolean('have_url')->default(1);
@@ -28,9 +28,8 @@ class CreateChurchInformationTable extends Migration
             $table->string('zip')->nullable();
             $table->string('phone')->nullable();
             $table->string('contact_email')->nullable();
-            $table->string('streaming_link')->nullable();
-            $table->string('giving_link')->nullable();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -41,6 +40,6 @@ class CreateChurchInformationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('church_information');
+        Schema::dropIfExists('infos');
     }
 }

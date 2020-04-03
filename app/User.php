@@ -39,6 +39,26 @@ class User extends Authenticatable
 
     public function info()
     {
-        return $this->hasOne('App\ChurchInformation');
+        return $this->hasOne('App\Info');
+    }
+     public function mission()
+    {
+        return $this->hasOne('App\Mission');
+    }
+     public function pastor()
+    {
+        return $this->hasOne('App\Pastor');
+    }
+    public function testimonials()
+    {
+        return $this->hasMany('App\Testimonial');
+    }
+    public function visit()
+    {
+        return $this->hasOne('App\Visit');
+    }
+    public function hero()
+    {
+        return $this->hasOne('App\Hero');
     }
 }

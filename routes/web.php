@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/info', 'ChurchInformationController@index');
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/info', 'InfoController@index');
+    Route::put('/info', 'InfoController@update');
+    Route::get('/hero', 'HeroController@index');
+    Route::put('/hero', 'HeroController@update');
+});
