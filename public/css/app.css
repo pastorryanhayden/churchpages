@@ -1198,6 +1198,23 @@ video {
  * @import "tailwindcss/utilities";
  */
 
+div.preview {
+  position: relative;
+  resize: both;
+  padding: 1rem;
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+section.preview-section {
+  width: 1188px;
+  height: 1400px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  transform-origin: left top;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

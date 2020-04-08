@@ -23,5 +23,12 @@
 </div>
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
+      <script>
+  UPLOADCARE_PUBLIC_KEY = '757368ca8a68c3e71ade';
+  UPLOADCARE_TABS = 'file camera';
+  UPLOADCARE_IMAGE_SHRINK = '1600x1600';
+  UPLOADCARE_IMAGES_ONLY = true;
+</script>
+@stack('scripts')
 </body>
 </html>

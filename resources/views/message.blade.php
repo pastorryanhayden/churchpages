@@ -4,12 +4,12 @@
 <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold leading-tight text-gray-900">
-            2. Hero
+            3. Message
         </h1>
     </div>
 </header>
 <main id="app">
-    <hero-step :user="{{ json_encode($user) }}" :dbinfo="{{ json_encode($user->info) }}" :dbhero="{{ json_encode($user->hero) }}"></hero-step>
+    <message-step :user="{{ json_encode($user) }}" :dbinfo="{{ json_encode($user->info) }}" :dbmessage="{{ json_encode($user->mission) }}"></message-step>
  
 </main>
 @endsection

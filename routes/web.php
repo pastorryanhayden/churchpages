@@ -23,5 +23,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/info', 'InfoController@index');
     Route::put('/info', 'InfoController@update');
     Route::get('/hero', 'HeroController@index');
-    Route::put('/hero', 'HeroController@update');
+    Route::get('/message', 'MessageController@index');
 });
