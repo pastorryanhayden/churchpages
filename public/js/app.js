@@ -2088,6 +2088,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user', 'dbinfo', 'dbmessage'],
@@ -2117,6 +2125,17 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.save();
       }
+    },
+    addItem: function addItem() {
+      if (!this.message.items) {
+        this.message.items = [];
+      }
+
+      this.message.items.push({
+        icon: '',
+        title: "Example Title",
+        body: ""
+      });
     },
     save: function save() {
       axios.post("/api/hero/".concat(this.user.id), this.hero).then(function (response) {
@@ -48837,6 +48856,43 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
+        _c("span", { staticClass: "inline-flex rounded-md shadow-sm" }, [
+          _c(
+            "button",
+            {
+              staticClass:
+                "inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150",
+              attrs: { type: "button" },
+              on: { click: _vm.addItem }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "-ml-1 mr-3 h-5 w-5",
+                  attrs: {
+                    viewBox: "0 0 20 20",
+                    fill: "none",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      "clip-rule": "evenodd",
+                      d:
+                        "M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM11 7C11 6.44772 10.5523 6 10 6C9.44772 6 9 6.44772 9 7V9H7C6.44772 9 6 9.44771 6 10C6 10.5523 6.44772 11 7 11H9V13C9 13.5523 9.44772 14 10 14C10.5523 14 11 13.5523 11 13V11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H11V7Z",
+                      fill: "currentColor"
+                    }
+                  })
+                ]
+              ),
+              _vm._v("\n    Add Section\n  ")
+            ]
+          )
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "mt-12" }, [
           _c(
             "button",
@@ -48845,7 +48901,7 @@ var render = function() {
                 "w-full py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 shadow-sm hover:bg-indigo-500 focus:outline-none focus:shadow-outline-blue active:bg-indigo-600 transition duration-150 ease-in-out",
               on: { click: _vm.check }
             },
-            [_vm._v("\n                Save\n            ")]
+            [_vm._v("\n                    Save\n                ")]
           )
         ])
       ]
